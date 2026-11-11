@@ -5,7 +5,7 @@ A worked example of the quarterly evaluation report **ChiResearch Technologies, 
 Two formats, same content:
 
 - **[Interactive version](./)** — every indicator opens to its operational definition and the delivered file each figure traces to. Switch reporting periods; filter by sub-region.
-- **[PDF version](./ChiResearch_Sample_Quarterly_Evaluation_Report.pdf)** — 7 pages, the document as delivered.
+- **[PDF version](./ChiResearch_Sample_Quarterly_Evaluation_Report.pdf)** — 8 pages, the document as delivered.
 
 ## What it shows
 
