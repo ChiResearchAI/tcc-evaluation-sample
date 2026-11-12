@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A sample quarterly evaluation report for a SAMHSA Garrett Lee Smith suicide prevention grant, with every figure traceable to its source.">
+<meta name="author" content="ChiResearch Technologies, LLC">
+<meta name="robots" content="noindex, follow">
+<meta property="og:title" content="Quarterly Evaluation Report — sample">
+<meta property="og:description" content="A sample quarterly evaluation report for a SAMHSA Garrett Lee Smith suicide prevention grant, with every figure traceable to its source.">
+<meta property="og:type" content="article">
+<noscript><style>.tw,.bars,#inds,#funnel{display:none}</style></noscript>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { margin: 0; }
+  img { max-width: 100%; height: auto; }
+  [hidden] { display: none !important; }
+</style>
+<title>Quarterly Evaluation Report — sample · ChiResearch Technologies, LLC</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  /* Layout: report header, quarter switch, indicator list that opens an audit panel in place */
+  :root{
+    --bg:#f6f7f8; --surface:#fff; --surface-2:#eef1f2; --fg:#15202a; --fg-soft:#4b5a67;
+    --fg-faint:#71838f; --rule:#d9dee2; --rule-soft:#e9edef;
+    --accent:#0f5e5a; --accent-soft:#e3efed; --ok:#0f5e5a; --warn:#8a6414; --risk:#93412c;
+    --sample:#8a2a12; --sample-bg:#fbeeea;
+    --fd:"Source Serif 4",Georgia,serif; --fb:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --bg:#10161b; --surface:#171f26; --surface-2:#1e272f; --fg:#e7edf1; --fg-soft:#aab8c3;
+    --fg-faint:#85959f; --rule:#2a353d; --rule-soft:#212b32;
+    --accent:#5fc4b8; --accent-soft:#1a2d2d; --ok:#5fc4b8; --warn:#d6a84a; --risk:#e08a6e;
+    --sample:#e08a6e; --sample-bg:#2a1a15; color-scheme:dark;}}
+  :root[data-theme="dark"]{
+    --bg:#10161b; --surface:#171f26; --surface-2:#1e272f; --fg:#e7edf1; --fg-soft:#aab8c3;
+    --fg-faint:#85959f; --rule:#2a353d; --rule-soft:#212b32;
+    --accent:#5fc4b8; --accent-soft:#1a2d2d; --ok:#5fc4b8; --warn:#d6a84a; --risk:#e08a6e;
+    --sample:#e08a6e; --sample-bg:#2a1a15; color-scheme:dark;}
+
+  body{background:var(--bg);color:var(--fg);font-family:var(--fb);font-size:15px;line-height:1.5;
+    padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+    padding-block:0;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:70rem;margin:0 auto;padding-block:1.5rem 3.5rem}
+  .layout{display:grid;grid-template-columns:minmax(0,1fr) 13.5rem;gap:2.75rem;align-items:start}
+  .main{min-width:0}
+  .toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 1.25rem);align-self:start}
+  .toc-inner{border-left:2px solid var(--rule);padding-left:1rem}
+  .toc-h{font-size:.64rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+    color:var(--fg-faint);margin:0 0 .6rem}
+  .toc ol{list-style:none;margin:0 0 1.1rem;padding:0;counter-reset:toc}
+  .toc li{counter-increment:toc;margin-bottom:.1rem}
+  .toc a[data-s]{display:block;font-size:.8rem;line-height:1.3;color:var(--fg-soft);text-decoration:none;
+    padding:.33rem 0 .33rem .1rem;border-left:2px solid transparent;margin-left:-1.1rem;padding-left:1rem}
+  .toc a[data-s]::before{content:counter(toc) ". ";color:var(--fg-faint);font-variant-numeric:tabular-nums}
+  .toc a[data-s]:hover{color:var(--fg)}
+  .toc a[data-s].on{color:var(--accent);font-weight:600;border-left-color:var(--accent)}
+  .toc a[data-s].on::before{color:var(--accent)}
+  a.dl-rail{display:block;text-align:center;padding:.55rem .6rem;font-size:.8rem;line-height:1.25}
+  .dl-rail small{display:block;font-weight:400;font-size:.68rem;opacity:.85;margin-top:.1rem}
+  a.dl-top{display:none}
+  @media (max-width:62rem){
+    .layout{grid-template-columns:minmax(0,1fr);gap:0}
+    .toc{position:static;order:-1;margin-bottom:1.25rem}
+    .toc-inner{border-left:0;padding-left:0;border-bottom:1px solid var(--rule);padding-bottom:.9rem}
+    .toc ol{display:flex;flex-wrap:wrap;gap:.3rem .5rem;margin-bottom:0}
+    .toc a[data-s]{margin-left:0;padding:.28rem .55rem;border:1px solid var(--rule);border-left-width:1px;
+      border-radius:2px;font-size:.76rem}
+    .toc a[data-s].on{border-color:var(--accent)}
+    a.dl-rail{display:none}
+    a.dl-top{display:block;text-align:center;margin-bottom:1.25rem}
+  }
+
+  .sample{background:var(--sample-bg);border:1px solid var(--sample);color:var(--sample);
+    font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    padding:.5rem .75rem;margin-bottom:1.25rem}
+
+  header .prog{font-size:.68rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;
+    color:var(--fg-faint);margin:0 0 .4rem}
+  h1{font-family:var(--fd);font-weight:700;font-size:clamp(1.7rem,4.6vw,2.3rem);line-height:1.12;
+    letter-spacing:-.015em;margin:0 0 .35rem}
+  .for{color:var(--fg-soft);font-size:.95rem;margin:0 0 1.1rem}
+  .byline{display:flex;flex-wrap:wrap;gap:.3rem 1.3rem;font-size:.8rem;color:var(--fg-faint);
+    border-top:1px solid var(--rule);padding-top:.75rem;margin-bottom:1.4rem}
+
+  .switch{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1.1rem}
+  .switch button{font-family:var(--fb);font-size:.82rem;font-weight:600;color:var(--fg-soft);
+    background:var(--surface);border:1px solid var(--rule);padding:.45rem .85rem;cursor:pointer;
+    border-radius:2px}
+  .switch button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+  :root[data-theme="dark"] .switch button[aria-pressed="true"],
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .switch button[aria-pressed="true"]{color:#0d1a1a}}
+
+  .lede{background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--accent);
+    padding:1rem 1.15rem;margin-bottom:1.5rem}
+  .lede p{margin:0;font-size:.95rem}
+  .lede strong{font-weight:600}
+
+  h2{font-family:var(--fd);font-weight:600;font-size:1.2rem;letter-spacing:-.01em;
+    margin:2.2rem 0 .3rem;padding-top:1.1rem;border-top:1px solid var(--rule)}
+  h2 .n{display:block;font-family:var(--fb);font-size:.64rem;font-weight:600;letter-spacing:.11em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:.35rem}
+  .sub{color:var(--fg-soft);font-size:.9rem;margin:0 0 .9rem;max-width:44rem}
+  .h3{font-family:var(--fd);font-size:1rem;font-weight:600;margin:1.5rem 0 .25rem}
+
+  .ind{border:1px solid var(--rule);background:var(--surface)}
+  .ind + .ind{border-top:0}
+  .ind button.row{all:unset;box-sizing:border-box;display:grid;
+    grid-template-columns:1fr auto auto 7.5rem;gap:.75rem;align-items:center;
+    width:100%;padding:.7rem .9rem;cursor:pointer}
+  .ind button.row:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  .ind .nm{font-size:.88rem;min-width:0}
+  .ind .nm small{display:block;color:var(--fg-faint);font-size:.72rem;margin-top:.1rem}
+  .ind .v{font-family:var(--fd);font-size:1.3rem;font-weight:600;font-variant-numeric:tabular-nums;
+    text-align:right;min-width:2.6rem}
+  .ind .chip{font-size:.62rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:.14rem .4rem;border:1px solid currentColor;white-space:nowrap}
+  .c-ok{color:var(--ok)}.c-warn{color:var(--warn)}.c-risk{color:var(--risk)}.c-na{color:var(--fg-faint)}
+  .ind .prog{min-width:0}
+  .track{display:block;background:var(--surface-2);height:.45rem;width:100%}
+  .fill{display:block;height:100%;background:var(--accent)}
+  .fill.w{background:var(--warn)}.fill.g{background:var(--fg-faint)}
+  .pct{font-size:.7rem;color:var(--fg-faint);font-variant-numeric:tabular-nums;margin-top:.2rem;display:block}
+
+  .audit{border-top:1px dashed var(--rule);background:var(--surface-2);padding:.9rem 1rem}
+  .audit h4{margin:0 0 .5rem;font-size:.66rem;font-weight:700;letter-spacing:.09em;
+    text-transform:uppercase;color:var(--accent)}
+  .audit dl{display:grid;grid-template-columns:9.5rem 1fr;gap:.35rem .9rem;margin:0;font-size:.84rem}
+  .audit dt{color:var(--fg-faint);font-weight:600}
+  .audit dd{margin:0;min-width:0}
+  .audit .file{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.78rem;
+    background:var(--surface);border:1px solid var(--rule);padding:.08rem .3rem}
+  @media (max-width:40rem){
+    .ind button.row{grid-template-columns:1fr auto;gap:.5rem}
+    .ind .prog{grid-column:1/-1}
+    .audit dl{grid-template-columns:1fr;gap:.1rem .5rem}
+    .audit dt{margin-top:.5rem}
+  }
+
+  .funnel{display:flex;flex-direction:column;gap:.4rem;margin:.8rem 0 .5rem}
+  .fr{display:grid;grid-template-columns:minmax(0,11rem) 1fr auto;gap:.7rem;align-items:center;font-size:.85rem}
+  .fr .fl{min-width:0;color:var(--fg-soft)}
+  .fr .ft{background:var(--surface-2);height:1.35rem;position:relative;min-width:0}
+  .fr .ff{height:100%;background:var(--accent);display:flex;align-items:center;padding-left:.4rem;
+    color:#fff;font-size:.74rem;font-weight:600;font-variant-numeric:tabular-nums}
+  .fr .ff.gap{background:var(--risk)}
+  .fr .fv{font-size:.78rem;color:var(--fg-faint);font-variant-numeric:tabular-nums;white-space:nowrap}
+  @media (max-width:36rem){.fr{grid-template-columns:1fr auto}.fr .fl{grid-column:1/-1}}
+
+  .tw{overflow-x:auto;border:1px solid var(--rule);background:var(--surface);margin:.8rem 0}
+  table{border-collapse:collapse;width:100%;min-width:30rem;font-size:.85rem}
+  th,td{text-align:left;padding:.55rem .75rem;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+  thead th{font-size:.64rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--fg-faint);border-bottom:1px solid var(--rule);white-space:nowrap}
+  tbody tr:last-child td{border-bottom:0}
+  td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  tr.dim td{color:var(--fg-faint)}
+  tr.clickable{cursor:pointer}
+  tr.clickable:hover{background:var(--surface-2)}
+  tr.sel{background:var(--accent-soft)}
+
+  details{border:1px solid var(--rule);background:var(--surface);margin-bottom:.5rem}
+  summary{cursor:pointer;padding:.65rem .9rem;font-size:.88rem;font-weight:600;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+ ";color:var(--accent);font-weight:700}
+  details[open] summary::before{content:"− "}
+  details .body{padding:0 .9rem .9rem;font-size:.85rem;color:var(--fg-soft)}
+  details .body p{margin:0 0 .5rem}
+
+  .dl{display:inline-block;background:var(--accent);color:#fff;font-size:.85rem;font-weight:600;
+    padding:.55rem 1rem;text-decoration:none;border-radius:2px;margin-top:.3rem}
+  :root[data-theme="dark"] .dl{color:#0d1a1a}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .dl{color:#0d1a1a}}
+
+  footer{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);
+    font-size:.78rem;color:var(--fg-faint)}
+  footer p{max-width:44rem;margin:0 0 .4rem}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <div class="sample">Illustrative sample · program figures are not actual data</div>
+  <noscript><p style="border:1px solid #8a2a12;padding:.75rem 1rem;font-size:.9rem">This report's tables are built in the browser. For the complete document, <a href="ChiResearch_Sample_Quarterly_Evaluation_Report.pdf">download the PDF (8 pages)</a>.</p></noscript>
+
+  <header>
+    <p class="prog">Garrett Lee Smith Suicide Prevention Program · SAMHSA</p>
+    <h1>Quarterly Evaluation Report</h1>
+    <p class="for">Department of Wellness and Prevention · Tanana Chiefs Conference Health Services</p>
+    <div class="byline">
+      <span>Prepared by ChiResearch Technologies, LLC</span>
+      <span>Wilfred C. Ikejiofor, Evaluation Lead</span>
+      <span id="rptdate">Report date 14 April 2027</span>
+    </div>
+  </header>
+
+  <a class="dl dl-top" href="ChiResearch_Sample_Quarterly_Evaluation_Report.pdf">Download the report (PDF, 8 pages)</a>
+
+  <div class="layout">
+  <div class="main">
+
+  <div class="switch" role="group" aria-label="Reporting period">
+    <button type="button" data-q="q1" aria-pressed="false">Quarter 1 · Oct–Dec 2026</button>
+    <button type="button" data-q="q2" aria-pressed="true">Quarter 2 · Jan–Mar 2027</button>
+    <button type="button" data-q="cum" aria-pressed="false">Cumulative, Year 1</button>
+  </div>
+
+  <div class="lede"><p id="lede"></p></div>
+
+  <h2 id="s1"><span class="n">Section 1</span>Required performance indicators</h2>
+  <p class="sub">The five indicators reported quarterly to SAMHSA. <strong>Select any indicator to see its operational definition and the file every figure traces to.</strong></p>
+  <div id="inds"></div>
+
+  <h2 id="s2"><span class="n">Section 2</span>Referral and service linkage</h2>
+  <p class="sub">Indicator five counts individuals who <em>receive</em> services after referral, not individuals referred. The difference is the measure most often misreported in a grant's first year.</p>
+  <div class="funnel" id="funnel"></div>
+  <div class="lede" style="border-left-color:var(--risk)"><p id="linknote"></p></div>
+
+  <h2 id="s3"><span class="n">Section 3</span>Reach across the region</h2>
+  <p class="sub">235,000 square miles, six sub-regions, 42 member communities. Activity counts favor road-accessible areas, so reach is reported by sub-region every quarter and absence is flagged rather than averaged away. <strong>Select a sub-region to filter.</strong> Sub-regions are labelled A to F here because the activity figures are invented, and no community should appear in a record of services it did not receive.</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Sub-region</th><th class="n">Trained</th><th class="n">Screened</th><th class="n">Referred</th><th>Quarter note</th></tr></thead>
+      <tbody id="subs"></tbody>
+    </table>
+  </div>
+  <p class="sub" id="subnote" style="margin-top:.4rem"></p>
+
+  <h2 id="s4"><span class="n">Section 4</span>Data quality and completeness</h2>
+  <p class="sub">Every report states what is missing before it states what was found. A project officer who discovers a gap you did not disclose will discount the rest of the submission.</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Measure</th><th class="n">Complete</th><th class="n">Missing</th><th>Effect on this report</th></tr></thead>
+      <tbody id="dq"></tbody>
+    </table>
+  </div>
+
+  <h2 id="s5"><span class="n">Section 5</span>What the published data supports about program design</h2>
+  <p class="sub">Program counts describe what the program did. Published data establishes what it is aimed at, and whether the aim is right. Everything in this section is <strong>real</strong>, from the 2026 Alaska Native Injury Atlas &mdash; unlike the program figures above, nothing here is illustrative.</p>
+
+  <div class="lede"><p><strong>How we report regional data, and why.</strong> The atlas publishes figures for thirteen regions. We report the Interior&rsquo;s own figures alongside the statewide picture, and <strong>we do not rank regions against one another</strong>. A comparative table invites reading one community&rsquo;s experience as a score against another&rsquo;s, which serves no purpose for this program and is not ours to publish. Where comparison aids interpretation, we give the statewide range.</p></div>
+
+  <h3 class="h3">Suicide attempt hospitalizations as a share of regional injury burden</h3>
+  <p class="sub" style="font-size:.85rem">Alaska Native people, 2018&ndash;2023.</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Measure</th><th class="n">Value</th><th>Reading</th></tr></thead>
+      <tbody>
+        <tr style="background:var(--accent-soft)"><td><b>Interior region</b></td><td class="n"><b>15.9%</b></td><td>About one in six Alaska Native injury hospitalizations from this region involved a suicide attempt</td></tr>
+        <tr><td>Median across the thirteen regions</td><td class="n">16.9%</td><td>The Interior sits close to the middle of the statewide picture</td></tr>
+        <tr><td>Range across the thirteen regions</td><td class="n">9.4% &ndash; 42.8%</td><td>Regional figures vary widely, for reasons the measure itself cannot separate</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="lede"><p><strong>What this figure is, and the mistake it invites.</strong> The denominator is <em>total injury hospitalizations in the region</em>, not regional population. So this is a share of injury burden, not a rate, and a region with fewer injuries of other kinds shows a higher percentage without any difference in suicide attempts at all. The atlas is explicit that it publishes no rates based on population at any geography.</p>
+  <p style="margin-top:.5rem">A higher share can also reflect differences in identification and coding rather than differences in events.</p></div>
+
+  <h3 class="h3">Age and sex distribution, statewide</h3>
+  <p class="sub" style="font-size:.85rem">The grant serves youth and young adults up to age 24. This distribution is the evidence that it is the right population to serve.</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Age group</th><th class="n">Female</th><th class="n">Male</th><th class="n">Total</th><th class="n">Share of all</th></tr></thead>
+      <tbody id="ages"></tbody>
+    </table>
+  </div>
+
+  <div class="lede"><p><strong>The program is aimed where prevention reaches furthest.</strong> Ages 10 to 29 account for 62.7% of these hospitalizations statewide. The grant&rsquo;s up-to-24 population sits inside the age range where gatekeeper training and screening put the program in contact with the most young people, so the funded design is already pointed at the right place. The evaluation&rsquo;s job is to show how far it reaches.</p>
+  <p style="margin-top:.5rem"><strong>Reaching young people where they already are.</strong> Young women are 78.0% of the 10&ndash;19 figures. Screening offered in settings young people already visit &mdash; school health, routine clinic visits, youth programming &mdash; reaches more of them than screening that waits for a referral. Screening reach is reported by sex and by setting each quarter so the Department can see whether its placement is working.</p>
+  <p style="margin-top:.5rem"><strong>What the program adds.</strong> These figures describe young people who reached a hospital. Prevention works earlier than that &mdash; a trained adult who notices, a screening conversation, a referral that connects. Measuring that earlier contact is the whole purpose of the five indicators in Section 1.</p></div>
+
+  <h3 class="h3">Limits carried with these figures</h3>
+  <div id="srcs"></div>
+
+  <h2 id="s6"><span class="n">Section 6</span>The full report</h2>
+  <p class="sub">This page carries the same content as the quarterly report delivered to the Department, in the format a reader can interrogate. The delivered document is a PDF.</p>
+  <a class="dl" id="pdflink" href="ChiResearch_Sample_Quarterly_Evaluation_Report.pdf">Download the quarterly report (PDF, 8 pages)</a>
+
+  </div>
+
+  <aside class="toc" aria-label="Contents">
+    <div class="toc-inner">
+      <p class="toc-h">Contents</p>
+      <ol><li><a href="#s1" data-s="s1">Performance indicators</a></li><li><a href="#s2" data-s="s2">Referral linkage</a></li><li><a href="#s3" data-s="s3">Reach across the region</a></li><li><a href="#s4" data-s="s4">Data quality</a></li><li><a href="#s5" data-s="s5">Published data</a></li><li><a href="#s6" data-s="s6">The full report</a></li></ol>
+      <a class="dl dl-rail" href="ChiResearch_Sample_Quarterly_Evaluation_Report.pdf">Download PDF<small>8 pages &middot; 96 KB</small></a>
+    </div>
+  </aside>
+  </div>
+
+  <footer>
+    <p><strong>ChiResearch Technologies, LLC</strong> · 6828 Flagstaff St, Hyattsville, MD 20785 · wilfred@chiresearchai.com · 410-929-2170</p>
+    <p>Illustrative sample prepared November 2026 to accompany a proposal for grant evaluation services. The five indicators, their definitions and the reporting cadence are taken from the published FY2026 Garrett Lee Smith State/Tribal notice of funding opportunity. External sources are cited accurately with their real coverage and limitations. All program activity figures are illustrative: they describe no real participants, services or outcomes.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var IND = [
+    {id:"mhp", name:"Individuals trained in mental health promotion", unit:"Completion, not attendance",
+     q1:38, q2:64, target:200,
+     def:"Distinct individuals completing a designated mental health promotion curriculum within the quarter. An individual completing two curricula counts once per curriculum type, once per year.",
+     src:"Training roster", inst:"Sign-in and completion sheet, with role and sub-region fields",
+     owner:"Program staff; evaluator verifies", file:"q2_training_roster.csv", recs:64, ext:"2027-04-02"},
+    {id:"sp", name:"Individuals trained in suicide prevention", unit:"Completion, not attendance",
+     q1:52, q2:87, target:250,
+     def:"Distinct individuals completing a designated gatekeeper or prevention curriculum within the quarter. Same completion and de-duplication rule.",
+     src:"Training roster", inst:"Same instrument, curriculum coded",
+     owner:"Program staff; evaluator verifies", file:"q2_training_roster.csv", recs:87, ext:"2027-04-02"},
+    {id:"scr", name:"Individuals screened for suicidal ideation", unit:"Positive or not",
+     q1:0, q2:214, target:600,
+     def:"Distinct individuals administered the designated screening instrument within the quarter, whether or not the result was positive. Re-screens of the same individual count once per quarter.",
+     src:"Screening record", inst:"Designated screening instrument with scored field, age and sub-region",
+     owner:"Clinical or program staff; evaluator verifies", file:"q2_screening_records.csv", recs:214, ext:"2027-04-02"},
+    {id:"ref", name:"Individuals referred to crisis or other mental health services", unit:"Counted at referral",
+     q1:0, q2:31, target:null,
+     def:"Distinct individuals for whom a referral was made and logged following a positive screen or staff identification. Counted at the point of referral.",
+     src:"Referral log", inst:"Referral form with destination provider and date",
+     owner:"Program staff", file:"q2_referral_log.csv", recs:31, ext:"2027-04-05"},
+    {id:"svc", name:"Individuals receiving services following referral", unit:"Requires a return record",
+     q1:0, q2:19, target:null,
+     def:"Distinct referred individuals with a confirmed service contact at the receiving provider. An offer of service is not a service contact.",
+     src:"Referral log, provider confirmation field", inst:"Provider confirmation, with release in place",
+     owner:"Program staff; evaluator reconciles", file:"q2_referral_log.csv", recs:19, ext:"2027-04-05"}
+  ];
+
+  var FILES = {
+    mhp:{q1:{f:"q1_training_roster.csv",r:38,e:"2027-01-05"}, q2:{f:"q2_training_roster.csv",r:64,e:"2027-04-02"}},
+    sp: {q1:{f:"q1_training_roster.csv",r:52,e:"2027-01-05"}, q2:{f:"q2_training_roster.csv",r:87,e:"2027-04-02"}},
+    scr:{q1:null, q2:{f:"q2_screening_records.csv",r:214,e:"2027-04-02"}},
+    ref:{q1:null, q2:{f:"q2_referral_log.csv",r:31,e:"2027-04-05"}},
+    svc:{q1:null, q2:{f:"q2_referral_log.csv",r:19,e:"2027-04-05"}}
+  };
+
+  var SUBS = [
+    {name:"Sub-region A",    q1:{t:24,s:0,r:0}, q2:{t:61,s:88,r:14}, n2:"Road-accessible; two school sites", n1:"Instrumentation and staff training"},
+    {name:"Sub-region B",    q1:{t:21,s:0,r:0}, q2:{t:34,s:52,r:8},  n2:"Two village trips completed",      n1:"Instrumentation and staff training"},
+    {name:"Sub-region C",    q1:{t:18,s:0,r:0}, q2:{t:28,s:41,r:5},  n2:"One trip completed, one deferred", n1:"Instrumentation and staff training"},
+    {name:"Sub-region D",    q1:{t:14,s:0,r:0}, q2:{t:19,s:33,r:4},  n2:"Single site",                      n1:"Instrumentation and staff training"},
+    {name:"Sub-region E",    q1:{t:8,s:0,r:0},  q2:{t:9,s:0,r:0},    n2:"No screening — planned travel did not occur", n1:"Instrumentation only", risk2:true},
+    {name:"Sub-region F",    q1:{t:5,s:0,r:0},  q2:{t:0,s:0,r:0},    n2:"No activity — planned travel did not occur",  n1:"Instrumentation only", risk1:false, risk2:true}
+  ];
+
+  var DQ = {
+    q1:[["Training rosters with participant role recorded","90 / 90",0,"None"],
+        ["Sub-regions reporting any activity","6 / 6",0,"None"],
+        ["Screening instrument finalized and deployed","—","—","Screening began in January; no Quarter 1 screening data exists"]],
+    q2:[["Screening records with sub-region recorded","214 / 214",0,"None"],
+        ["Screening records with age recorded","201 / 214",13,"Age breakdown suppressed this quarter; 13 records would distort a small denominator"],
+        ["Referrals with a provider confirmation returned","19 / 31",12,"Indicator five reported as 19. See Section 2"],
+        ["Training rosters with participant role recorded","151 / 151",0,"None"],
+        ["Sub-regions reporting any activity","5 / 6",1,"Sub-region F recorded none; its planned travel did not occur"],
+        ["Sub-regions reporting any screening","4 / 6",2,"Regional screening totals are not regionally representative this quarter; stated wherever regional figures appear"]]
+  };
+  DQ.cum = DQ.q2;
+
+  var AGES = [["10–19",334,94,true],["20–29",282,164,true],["30–39",168,104,false],
+              ["40–49",108,35,false],["50–59",38,28,false],["60+",26,12,false]];
+
+  var SRC = [
+    {t:"No population-based rates are published, at any geography",
+     b:"The atlas states this directly. Every figure above is a count or a percentage of injury hospitalizations, and none is presented as a rate. Converting one into a population rate requires a denominator we can name, source and date — which this source does not supply."},
+    {t:"Inpatient admissions only",
+     b:"Drawn from the Alaska Health Facilities Data Reporting program, inpatient records only. An attempt treated at a village clinic, or in an emergency department without admission, does not appear. Across 235,000 square miles where most communities have no hospital, that is a material gap rather than a technicality."},
+    {t:"Race is recorded by the reporting facility",
+     b:"Non-Tribal facilities may record single-race categories and so may fail to capture all Alaska Native people, particularly multi-racial people. The Alaska Native counts are therefore a known undercount of unknown size — a floor, not a measurement."},
+    {t:"Data years 2018–2023; region assigned by home address",
+     b:"The period predates the grant. These figures establish the baseline the program is measured against, not current-year performance, and region reflects where the admitted person lives rather than where they were treated."},
+    {t:"Alaska Youth Risk Behavior Survey — most recent published cycle is 2023",
+     b:"The 2025 cycle has been fielded and its questionnaire published, but no 2025 Alaska results had been released as of this report. A new cycle will most likely publish during this grant year and shift any baseline keyed to 2023, so source currency is re-verified every quarter."}
+  ];
+
+  var LEDE = {
+    q1:"<strong>Quarter 1 was an instrumentation quarter, and the report says so rather than showing it as underperformance.</strong> Definitions, collection instruments and the referral-to-service linkage were built and deployed; training ran in all six sub-regions. No screening data exists for this quarter because screening began in January, and reporting a zero without that sentence would misstate the program to its project officer.",
+    q2:"<strong>Screening came online this quarter and immediately became the program's largest activity.</strong> Training continued at roughly the Quarter 1 pace. The measure that needs attention is not any single count — it is the gap between referral and service receipt, where 12 of 31 referred individuals have no recorded service contact. That gap, not the volume, is what will shape the annual report.",
+    cum:"<strong>At the halfway point of Year 1, training is on pace and screening is 14 points behind elapsed time</strong> because collection began in month four rather than month one. At the Quarter 2 rate the Year 1 screening target is reachable; at the Quarter 2 rate minus the two sub-regions that recorded no screening, it is not."
+  };
+  var LINK = {
+    q1:"No referral activity in Quarter 1. The chain shown here is the one the instrument was built to capture, and the first quarter it produces data is Quarter 2.",
+    q2:"<strong>A 61% linkage rate is not evidence that 12 young people went unserved.</strong> It is evidence that 12 referrals have no return record. Those are different findings with different remedies, and conflating them would misstate performance in both directions — understating service delivery and overstating a care gap. We report the measure as the indicator defines it, and report the records problem separately, because only one of them is fixable by the program this quarter.",
+    cum:"<strong>A 61% linkage rate is not evidence that 12 young people went unserved.</strong> It is evidence that 12 referrals have no return record. The recommended fix is procedural: a one-page release and a 14-day follow-up call added to the referral workflow would convert most unmatched referrals into reportable service contacts."
+  };
+  var DATE = {q1:"Report date 13 January 2027", q2:"Report date 14 April 2027", cum:"Cumulative through 31 March 2027"};
+
+  var q = "q2", openId = null, selSub = null;
+  var val = function(o){ return q==="cum" ? (o.q1+o.q2) : o[q]; };
+  // cumulative through the selected reporting period, not through the latest period on file
+  var ctd = function(i){ return q==="q1" ? i.q1 : (i.q1+i.q2); };
+  var esc = function(s){ return String(s).replace(/[&<>]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c];}); };
+
+  function one(x){ return '<span class="file">'+esc(x.f)+'</span> · '+x.r+' records · extracted '+esc(x.e); }
+  function fileCell(i){
+    var F = FILES[i.id], none = 'No Quarter 1 file — this collection opened in January 2027';
+    if(q==="q1")  return F.q1 ? one(F.q1) : none;
+    if(q==="q2")  return one(F.q2);
+    return (F.q1 ? one(F.q1)+'<br>' : none+'<br>') + one(F.q2);
+  }
+
+  function status(i){
+    if(i.id==="svc") return ['c-risk','Attention'];
+    if(q==="q1" && i.id==="scr") return ['c-na','Not yet open'];
+    if(i.target===null) return ['c-na','No target'];
+    var pct = ctd(i)/i.target;
+    var elapsed = (q==="q1") ? 0.25 : 0.50;
+    if(pct >= elapsed) return ['c-ok','On track'];
+    if(pct >= elapsed - 0.10) return ['c-warn','Near pace'];
+    return ['c-warn','Behind pace'];
+  }
+
+  function renderInds(){
+    var el = document.getElementById('inds'); el.innerHTML='';
+    IND.forEach(function(i){
+      var v = val(i), cum = ctd(i);
+      var st = status(i);
+      var pct = i.target ? Math.round(cum/i.target*100) : null;
+      var d = document.createElement('div'); d.className='ind';
+      var fillCls = pct===null ? 'g' : (pct>=50 ? '' : 'w');
+      d.innerHTML =
+        '<button class="row" type="button" aria-expanded="'+(openId===i.id)+'">'+
+          '<span class="nm">'+esc(i.name)+'<small>'+esc(i.unit)+'</small></span>'+
+          '<span class="v">'+v+'</span>'+
+          '<span class="chip '+st[0]+'">'+st[1]+'</span>'+
+          '<span class="prog">'+(i.target
+            ? '<span class="track"><span class="fill '+fillCls+'" style="width:'+Math.min(100,pct)+'%"></span></span><span class="pct">'+cum+' / '+i.target+' · '+pct+'%</span>'
+            : '<span class="pct">no Year 1 target</span>')+'</span>'+
+        '</button>'+
+        (openId===i.id ?
+          '<div class="audit"><h4>Operational definition and source</h4><dl>'+
+            '<dt>Counting rule</dt><dd>'+esc(i.def)+'</dd>'+
+            '<dt>Source system</dt><dd>'+esc(i.src)+'</dd>'+
+            '<dt>Instrument</dt><dd>'+esc(i.inst)+'</dd>'+
+            '<dt>Owner</dt><dd>'+esc(i.owner)+'</dd>'+
+            '<dt>Delivered file</dt><dd>'+fileCell(i)+'</dd>'+
+          '</dl></div>' : '');
+      d.querySelector('button').addEventListener('click', function(){
+        openId = (openId===i.id) ? null : i.id; renderInds();
+      });
+      el.appendChild(d);
+    });
+  }
+
+  function renderFunnel(){
+    var el = document.getElementById('funnel');
+    var z = (q==="q1");
+    var steps = z
+      ? [["Screened for suicidal ideation",0],["Screened positive, referral indicated",0],["Referral made and logged",0],["Service contact confirmed",0]]
+      : [["Screened for suicidal ideation",214],["Screened positive, referral indicated",34],["Referral made and logged",31],["Service contact confirmed",19],["No confirmation on record",12]];
+    var max = 214;
+    el.innerHTML = steps.map(function(s,ix){
+      var w = max ? Math.max(s[1]/max*100, s[1]>0?6:0) : 0;
+      var gap = (s[0].indexOf("No confirmation")===0);
+      var rate = ix>0 && steps[ix-1][1]>0 && !gap ? Math.round(s[1]/steps[ix-1][1]*1000)/10+'% of prior' : (gap?'38.7% of referrals':'');
+      return '<div class="fr"><div class="fl">'+esc(s[0])+'</div>'+
+        '<div class="ft"><div class="ff'+(gap?' gap':'')+'" style="width:'+w+'%">'+(s[1]>0?s[1]:'')+'</div></div>'+
+        '<div class="fv">'+rate+'</div></div>';
+    }).join('');
+    document.getElementById('linknote').innerHTML = LINK[q];
+  }
+
+  function renderSubs(){
+    var tb = document.getElementById('subs'); tb.innerHTML='';
+    SUBS.forEach(function(s,ix){
+      var d = (q==="cum") ? {t:s.q1.t+s.q2.t, s:s.q1.s+s.q2.s, r:s.q1.r+s.q2.r} : s[q];
+      var note = (q==="q1") ? s.n1 : s.n2;
+      var risky = (q==="q1") ? !!s.risk1 : !!s.risk2;
+      var tr = document.createElement('tr');
+      tr.className = 'clickable' + (selSub===ix?' sel':'') + ((d.t+d.s+d.r)===0?' dim':'');
+      tr.innerHTML = '<td>'+esc(s.name)+'</td><td class="n">'+d.t+'</td><td class="n">'+d.s+'</td><td class="n">'+d.r+'</td>'+
+        '<td>'+(risky?'<span class="chip c-risk">Flagged</span> ':'')+esc(note)+'</td>';
+      tr.addEventListener('click', function(){ selSub = (selSub===ix)?null:ix; renderSubs(); });
+      tb.appendChild(tr);
+    });
+    var n = document.getElementById('subnote');
+    if(selSub===null){ n.textContent = ''; }
+    else {
+      var s = SUBS[selSub];
+      var d = (q==="cum") ? {t:s.q1.t+s.q2.t, s:s.q1.s+s.q2.s, r:s.q1.r+s.q2.r} : s[q];
+      var tot = SUBS.reduce(function(a,x){var y=(q==="cum")?{t:x.q1.t+x.q2.t,s:x.q1.s+x.q2.s,r:x.q1.r+x.q2.r}:x[q];return {t:a.t+y.t,s:a.s+y.s,r:a.r+y.r};},{t:0,s:0,r:0});
+      var share = function(a,b){ return b>0 ? Math.round(a/b*100)+'%' : '—'; };
+      n.innerHTML = '<strong>'+esc(s.name)+'</strong> accounts for '+share(d.t,tot.t)+' of training, '+
+        share(d.s,tot.s)+' of screening and '+share(d.r,tot.r)+' of referrals this period. '+
+        ((d.s===0) ? 'No screening activity was recorded, so this sub-region contributes nothing to the screening indicator and its absence is stated wherever regional figures appear.' : 'Select again to clear.');
+    }
+  }
+
+  function renderDQ(){
+    var tb = document.getElementById('dq');
+    tb.innerHTML = DQ[q].map(function(r){
+      return '<tr><td>'+esc(r[0])+'</td><td class="n">'+esc(r[1])+'</td><td class="n">'+esc(r[2])+'</td><td>'+esc(r[3])+'</td></tr>';
+    }).join('');
+  }
+
+  function renderAges(){
+    var T = 1393;
+    var rows = AGES.map(function(a){
+      var tot = a[1]+a[2];
+      return '<tr'+(a[3]?' style="background:var(--accent-soft)"':'')+'><td>'+(a[3]?'<b>'+esc(a[0])+'</b>':esc(a[0]))+
+        '</td><td class="n">'+a[1]+'</td><td class="n">'+a[2]+'</td><td class="n">'+(a[3]?'<b>'+tot+'</b>':tot)+
+        '</td><td class="n">'+(tot/T*100).toFixed(1)+'%</td></tr>';
+    }).join('');
+    rows += '<tr><td><b>All ages</b></td><td class="n"><b>956</b></td><td class="n"><b>437</b></td><td class="n"><b>1,393</b></td><td class="n">100%</td></tr>';
+    document.getElementById('ages').innerHTML = rows;
+  }
+
+  function renderSrcs(){
+    document.getElementById('srcs').innerHTML = SRC.map(function(s){
+      return '<details><summary>'+esc(s.t)+'</summary><div class="body"><p>'+esc(s.b)+'</p></div></details>';
+    }).join('');
+  }
+
+  function renderAll(){
+    document.getElementById('lede').innerHTML = LEDE[q];
+    document.getElementById('rptdate').textContent = DATE[q];
+    renderInds(); renderFunnel(); renderSubs(); renderDQ();
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('.switch button'), function(b){
+    b.addEventListener('click', function(){
+      q = b.getAttribute('data-q'); openId = null; selSub = null;
+      Array.prototype.forEach.call(document.querySelectorAll('.switch button'), function(x){
+        x.setAttribute('aria-pressed', String(x===b));
+      });
+      renderAll();
+    });
+  });
+
+  renderSrcs(); renderAges(); renderAll();
+
+  var links = {}, order = [];
+  Array.prototype.forEach.call(document.querySelectorAll('.toc a[data-s]'), function(a){
+    links[a.getAttribute('data-s')] = a; order.push(a.getAttribute('data-s'));
+  });
+  function mark(id){
+    order.forEach(function(k){ links[k].classList.toggle('on', k===id); });
+  }
+  if ('IntersectionObserver' in window) {
+    var seen = {};
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ seen[e.target.id] = e.isIntersecting ? e.boundingClientRect.top : null; });
+      var cur = null;
+      for (var i=0;i<order.length;i++){ var el=document.getElementById(order[i]);
+        if (el && el.getBoundingClientRect().top <= 140) cur = order[i]; }
+      mark(cur || order[0]);
+    }, {rootMargin:'-120px 0px -65% 0px', threshold:[0,1]});
+    order.forEach(function(k){ var el=document.getElementById(k); if(el) io.observe(el); });
+    window.addEventListener('scroll', function(){
+      var cur=null;
+      for (var i=0;i<order.length;i++){ var el=document.getElementById(order[i]);
+        if (el && el.getBoundingClientRect().top <= 140) cur = order[i]; }
+      mark(cur || order[0]);
+    }, {passive:true});
+    mark(order[0]);
+  }
+})();
+</script>
+
+</body>
+</html>
